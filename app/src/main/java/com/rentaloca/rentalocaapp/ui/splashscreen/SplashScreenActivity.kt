@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.rentaloca.rentalocaapp.MainActivity
@@ -20,7 +21,7 @@ class SplashScreenActivity : AppCompatActivity() {
             window.statusBarColor = Color.WHITE
         }
 
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
         }, 4000)
     }
