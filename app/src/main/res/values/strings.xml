@@ -10,4 +10,15 @@
     <string name="full_name_hint">Type your full name</string>
     <string name="button_continue">Continue</string>
     <string name="add_picture_profile">Add picture profile</string>
+    <string name="phone_no">Phone No</string>
+    <string name="phone_no_hint">Type your phone number</string>
+    <string name="weight">Weight</string>
+    <string name="weight_hint">Type your weight</string>
+    <string name="height">Height</string>
+    <string name="height_hint">Type your height</string>
+    <string name="ukuran_atasan">Ukuran Atasan</string>
+    <string name="ukuran_atasan_hint">Type your ukuran atasan</string>
+    <string name="ukuran_bawahan">Ukuran Bawahan</string>
+    <string name="ukuran_bawahan_hint">Type your ukuran bawahan</string>
+    <string name="button_signup_now">Sign Up Now</string>
 </resources>
