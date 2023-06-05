@@ -11,48 +11,19 @@
         tools:context=".view.auth.signin.SigninActivity">
 
         <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="32dp"
-            android:text="@string/title_signup_page"
-            android:textColor="@color/custom_pink_dark"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="45dp"
-            android:contentDescription="@string/add_picture_profile"
-            android:src="@drawable/ic_picture_empty"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-            tools:ignore="ImageContrastCheck" />
-
-        <TextView
             android:id="@+id/emailTextView"
             style="@style/TextView.PoppinsNormal16sp020202"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="32dp"
             android:text="@string/full_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <EditText
             android:id="@+id/fullnameEditText"
@@ -70,7 +41,6 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:padding="10dp"
-            app:drawableStartCompat="@drawable/baseline_email_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +78,6 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:padding="10dp"
-            app:drawableStartCompat="@drawable/ic_baseline_lock_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView"
@@ -145,7 +114,6 @@
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:padding="10dp"
-            app:drawableStartCompat="@drawable/ic_baseline_lock_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView2"
@@ -182,7 +150,6 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:padding="10dp"
-            app:drawableStartCompat="@drawable/ic_baseline_lock_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView3"
@@ -219,7 +186,6 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:padding="10dp"
-            app:drawableStartCompat="@drawable/ic_baseline_lock_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView4"
@@ -256,7 +222,6 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:padding="10dp"
-            app:drawableStartCompat="@drawable/ic_baseline_lock_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView5"
@@ -286,10 +251,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="45dp"
-            android:text="@string/button_signin"
+            android:text="@string/to_signin"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -297,6 +262,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonSignup"
             tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/rentaloca" />
+
+        </androidx.appcompat.widget.Toolbar>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
