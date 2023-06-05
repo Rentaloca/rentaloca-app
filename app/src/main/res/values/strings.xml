@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Rentaloca</string>
+    <string name="title_login_page">Hai, Selamat Datang!</string>
+    <string name="message_login_page">silakan login</string>
     <string name="email_address">Email Address</string>
     <string name="email_hint">Type your email address</string>
     <string name="password">Password</string>
@@ -21,4 +23,19 @@
     <string name="ukuran_bawahan">Ukuran Bawahan</string>
     <string name="ukuran_bawahan_hint">Type your ukuran bawahan</string>
     <string name="button_signup_now">Sign Up Now</string>
+    <string name="title_activity_signup">SignupActivity</string>
+
+
+    <string name="title_signup_page">Lengkapi Data Diri</string>
+    <string name="fullname">Full Name</string>
+    <string name="fullname_hint">Type your full name</string>
+    <string name="notelp">No Telepon</string>
+    <string name="notelp_hint">Type your no telepon</string>
+    <string name="alamat">Alamat</string>
+    <string name="alamat_hint">Type your alamat</string>
+    <string name="norekening">No Rekening</string>
+    <string name="norekening_hint">Type your no rekening</string>
+    <string name="button_signupnow">Sign Up Now</string>
+
+
 </resources>
