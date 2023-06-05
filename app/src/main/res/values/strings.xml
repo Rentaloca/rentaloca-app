@@ -37,5 +37,5 @@
     <string name="norekening_hint">Type your no rekening</string>
     <string name="button_signupnow">Sign Up Now</string>
 
-
+    <string name="greeting">Halo %1$s,</string>
 </resources>
