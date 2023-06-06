@@ -1,12 +1,15 @@
 <resources>
     <string name="app_name">Rentaloca</string>
-    <string name="email_address">Email Address</string>
-    <string name="email_hint">Type your email address</string>
-    <string name="password">Password</string>
-    <string name="password_hint">Type your password</string>
-    <string name="button_signin">Sign In</string>
-    <string name="button_signup">Create New Account</string>
-    <string name="full_name">Full Name</string>
+    <string name="title_login_page">Hai, Selamat Datang!</string>
+    <string name="message_login_page">silakan login</string>
+    <string name="email_address">Email</string>
+    <string name="email_hint">masukkan email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="password_hint">masukkan kata sandi</string>
+    <string name="button_signin">MASUK</string>
+    <string name="to_signin">Sudah punya akun? masuk disini.</string>
+    <string name="button_signup">Belum punya akun? daftar disini.</string>
+    <string name="full_name">Nama</string>
     <string name="full_name_hint">Type your full name</string>
     <string name="button_continue">Continue</string>
     <string name="add_picture_profile">Add picture profile</string>
@@ -21,4 +24,21 @@
     <string name="ukuran_bawahan">Ukuran Bawahan</string>
     <string name="ukuran_bawahan_hint">Type your ukuran bawahan</string>
     <string name="button_signup_now">Sign Up Now</string>
+    <string name="title_activity_signup">SignupActivity</string>
+
+
+    <string name="title_signup_page">Lengkapi Data Diri</string>
+    <string name="fullname">Full Name</string>
+    <string name="fullname_hint">masukkan nama anda</string>
+    <string name="notelp">Nomor Telepon</string>
+    <string name="notelp_hint">masukkan nomor telepon</string>
+    <string name="alamat">Alamat</string>
+    <string name="alamat_hint">masukkan alamat</string>
+    <string name="norekening">Nomor Rekening</string>
+    <string name="norekening_hint">masukkan nomor rekening</string>
+    <string name="button_signupnow">DAFTAR</string>
+
+    <string name="greeting">Halo %1$s,</string>
+    <string name="logout">LOGOUT</string>
+
 </resources>
