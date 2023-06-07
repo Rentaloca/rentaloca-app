@@ -1,4 +1,4 @@
-package com.rentaloca.rentalocaapp.view.auth.signup
+package com.rentaloca.rentalocaapp.ui.auth.signin
 
 import android.content.Context
 import android.content.Intent
@@ -9,21 +9,22 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.rentaloca.rentalocaapp.databinding.ActivitySignupBinding
+import com.rentaloca.rentalocaapp.databinding.ActivitySigninBinding
 import com.rentaloca.rentalocaapp.model.UserModel
 import com.rentaloca.rentalocaapp.model.UserPreference
-import com.rentaloca.rentalocaapp.view.ViewModelFactory
-import com.rentaloca.rentalocaapp.view.auth.signin.SigninActivity
+import com.rentaloca.rentalocaapp.ui.ViewModelFactory
+import com.rentaloca.rentalocaapp.ui.auth.signup.SignupActivity
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
-class SignupActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySignupBinding
-    private lateinit var signupViewModel: SignupViewModel
+class SigninActivity : AppCompatActivity() {
+    private lateinit var signinViewModel: SigninViewModel
+    private lateinit var binding: ActivitySigninBinding
+    private lateinit var user: UserModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignupBinding.inflate(layoutInflater)
+        binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupViewModel()
@@ -31,36 +32,42 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-        signupViewModel = ViewModelProvider(
+        signinViewModel = ViewModelProvider(
             this,
             ViewModelFactory(UserPreference.getInstance(dataStore))
-        )[SignupViewModel::class.java]
+        )[SigninViewModel::class.java]
+
+        signinViewModel.getUser().observe(this) { user ->
+            this.user = user
+        }
     }
 
     private fun setupAction() {
-        binding.buttonSignup.setOnClickListener {
-            val fullname = binding.fullnameEditText.text.toString()
+        binding.loginButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-            val notelpon = binding.notelponEditText.text.toString()
-            val alamat = binding.alamatEditText.text.toString()
-            val norekening = binding.norekeningEditText.text.toString()
             when {
-                fullname.isEmpty() -> {
-                    binding.fullnameEditText.error = "Masukkan email"
-                }
                 email.isEmpty() -> {
                     binding.emailEditText.error = "Masukkan email"
                 }
                 password.isEmpty() -> {
                     binding.passwordEditText.error = "Masukkan password"
                 }
+                email != user.email -> {
+                    binding.emailEditText.error = "Email tidak sesuai"
+                }
+                password != user.password -> {
+                    binding.passwordEditText.error = "Password tidak sesuai"
+                }
                 else -> {
-                    signupViewModel.saveUser(UserModel(fullname, email, password, notelpon, alamat, norekening, false))
+                    signinViewModel.login()
                     AlertDialog.Builder(this).apply {
                         setTitle("Yeah!")
-                        setMessage("Akunnya sudah jadi nih. Yuk, login dan belajar coding.")
+                        setMessage("Anda berhasil login. Sudah tidak sabar untuk belajar ya?")
                         setPositiveButton("Lanjut") { _, _ ->
+                            //val intent = Intent(context, MainActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                            startActivity(intent)
                             finish()
                         }
                         create()
@@ -70,8 +77,8 @@ class SignupActivity : AppCompatActivity() {
             }
         }
 
-        binding.buttonToSignin.setOnClickListener{
-            startActivity(Intent(this@SignupActivity, SigninActivity::class.java))
+        binding.buttonSignup.setOnClickListener{
+            startActivity(Intent(this@SigninActivity, SignupActivity::class.java))
         }
     }
 }
