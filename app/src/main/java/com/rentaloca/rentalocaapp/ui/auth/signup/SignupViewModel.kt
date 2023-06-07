@@ -1,4 +1,4 @@
-package com.rentaloca.rentalocaapp.view.auth.signup
+package com.rentaloca.rentalocaapp.ui.auth.signup
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

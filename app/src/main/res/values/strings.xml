@@ -40,5 +40,12 @@
 
     <string name="greeting">Halo %1$s,</string>
     <string name="logout">LOGOUT</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_camera">Kamera</string>
+    <string name="title_order">Keranjang</string>
+    <string name="title_profile">Profil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -12,16 +12,16 @@
         android:theme="@style/Theme.RentalocaApp"
         tools:targetApi="31">
         <activity
-            android:name=".view.auth.signup.SignupActivity"
+            android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".view.auth.signin.SigninActivity"
+            android:name=".ui.auth.signup.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".view.home.MainActivity"
+            android:name=".ui.auth.signin.SigninActivity"
             android:exported="false" />
         <activity
-            android:name=".view.splashscreen.SplashScreenActivity"
+            android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.RentalocaApp.noActionBar">
             <intent-filter>
