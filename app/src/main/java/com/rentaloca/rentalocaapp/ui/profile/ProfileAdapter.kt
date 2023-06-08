@@ -1,19 +1,19 @@
-package com.rentaloca.rentalocaapp.ui.home.all
+package com.rentaloca.rentalocaapp.ui.profile
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.rentaloca.rentalocaapp.databinding.ItemHomeVerticalBinding
-import com.rentaloca.rentalocaapp.model.dummy.HomeModel
+import com.rentaloca.rentalocaapp.databinding.ItemProfileBinding
+import com.rentaloca.rentalocaapp.model.dummy.ProfileModel
 
 
-class HomeAllAdapter (
-    private val listData : List<HomeModel>,
+class ProfileAdapter (
+    private val listData : List<ProfileModel>,
     private val itemAdapterCallback : ItemAdapterCallback,
-) : RecyclerView.Adapter<HomeAllAdapter.ViewHolder>(){
+) : RecyclerView.Adapter<ProfileAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemHomeVerticalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemProfileBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -25,11 +25,10 @@ class HomeAllAdapter (
         return listData.size
     }
 
-    class ViewHolder(private val binding: ItemHomeVerticalBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: HomeModel, itemAdapterCallback: ItemAdapterCallback) {
+    class ViewHolder(private val binding: ItemProfileBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: ProfileModel, itemAdapterCallback: ItemAdapterCallback) {
             binding.apply {
                 tvTitle.text = data.title
-                tvPrice.text = data.price
 
                 itemView.setOnClickListener { itemAdapterCallback.onClick(itemView, data) }
             }
@@ -37,6 +36,6 @@ class HomeAllAdapter (
     }
 
     interface ItemAdapterCallback {
-        fun onClick(v: View, data:HomeModel)
+        fun onClick(v: View, data:ProfileModel)
     }
 }

@@ -1,4 +1,4 @@
-package com.rentaloca.rentalocaapp.ui.home.all
+package com.rentaloca.rentalocaapp.ui.home.foryou
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +8,10 @@ import com.rentaloca.rentalocaapp.databinding.ItemHomeVerticalBinding
 import com.rentaloca.rentalocaapp.model.dummy.HomeModel
 
 
-class HomeAllAdapter (
+class HomeForYouAdapter (
     private val listData : List<HomeModel>,
     private val itemAdapterCallback : ItemAdapterCallback,
-) : RecyclerView.Adapter<HomeAllAdapter.ViewHolder>(){
+) : RecyclerView.Adapter<HomeForYouAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemHomeVerticalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)

@@ -10,7 +10,7 @@
         android:id="@+id/rcListAll"
         android:clipChildren="false"
         android:clipToPadding="false"
-        android:paddingEnd="24dp"
+        android:paddingEnd="18dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/white"

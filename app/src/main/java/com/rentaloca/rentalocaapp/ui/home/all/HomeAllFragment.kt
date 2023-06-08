@@ -43,21 +43,21 @@ class HomeAllFragment : Fragment(), HomeAllAdapter.ItemAdapterCallback {
 
     private fun initDataDummy() {
         bajuList = ArrayList()
-        bajuList.add(HomeModel("Baju mantapu", "", "Rp.100.000"))
-        bajuList.add(HomeModel("Baju gakgerah", "", "Rp.200.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju mantapu", "", "Rp.100.000"))
-        bajuList.add(HomeModel("Baju gakgerah", "", "Rp.200.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.100.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.200.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.900.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.900.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.900.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.100.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.200.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.900.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.900.000"))
+        bajuList.add(HomeModel("Baju dariallyak", "", "Rp.900.000"))
 
     }
 
     override fun onClick(v: View, data: HomeModel) {
-        Toast.makeText(context, "test klik gaes", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "test klik all", Toast.LENGTH_SHORT).show()
     }
 
 }
