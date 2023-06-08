@@ -1,5 +1,6 @@
 package com.rentaloca.rentalocaapp.ui.home.all
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rentaloca.rentalocaapp.R
 import com.rentaloca.rentalocaapp.databinding.FragmentHomeAllBinding
 import com.rentaloca.rentalocaapp.model.dummy.HomeModel
+import com.rentaloca.rentalocaapp.ui.detail.DetailActivity
 import com.rentaloca.rentalocaapp.ui.home.SectionPagerAdapter
 import com.rentaloca.rentalocaapp.ui.home.SpaceItemDecoration
 
@@ -57,7 +59,7 @@ class HomeAllFragment : Fragment(), HomeAllAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View, data: HomeModel) {
-        Toast.makeText(context, "test klik all", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(activity, DetailActivity::class.java))
     }
 
 }

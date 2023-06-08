@@ -1,5 +1,6 @@
 package com.rentaloca.rentalocaapp.ui.home.foryou
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.rentaloca.rentalocaapp.R
 import com.rentaloca.rentalocaapp.databinding.FragmentHomeAllBinding
 import com.rentaloca.rentalocaapp.databinding.FragmentHomeForYouBinding
 import com.rentaloca.rentalocaapp.model.dummy.HomeModel
+import com.rentaloca.rentalocaapp.ui.detail.DetailActivity
 import com.rentaloca.rentalocaapp.ui.home.SpaceItemDecoration
 import com.rentaloca.rentalocaapp.ui.home.all.HomeAllAdapter
 
@@ -57,7 +59,7 @@ class HomeForYouFragment : Fragment(), HomeForYouAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View, data: HomeModel) {
-        Toast.makeText(context, "test klik foryou", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(activity, DetailActivity::class.java))
     }
 
 }
