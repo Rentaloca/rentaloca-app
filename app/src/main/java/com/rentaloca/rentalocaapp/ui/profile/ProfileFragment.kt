@@ -1,21 +1,34 @@
 package com.rentaloca.rentalocaapp.ui.profile
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rentaloca.rentalocaapp.databinding.FragmentProfileBinding
-import com.rentaloca.rentalocaapp.model.dummy.HomeModel
+import com.rentaloca.rentalocaapp.model.UserPreference
 import com.rentaloca.rentalocaapp.model.dummy.ProfileModel
+import com.rentaloca.rentalocaapp.ui.MainActivity
+import com.rentaloca.rentalocaapp.ui.ViewModelFactory
+import com.rentaloca.rentalocaapp.ui.auth.signin.SigninActivity
 import com.rentaloca.rentalocaapp.ui.home.SpaceItemDecoration
 
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
 class ProfileFragment : Fragment(),ProfileAdapter.ItemAdapterCallback {
+    private lateinit var profileViewModel: ProfileViewModel
     private lateinit var binding: FragmentProfileBinding
-    private var opsiProfileList : ArrayList<ProfileModel> = ArrayList()
+    private var opsiProfileNotLoginList : ArrayList<ProfileModel> = ArrayList()
+    private var opsiProfileIsLoginList : ArrayList<ProfileModel> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,30 +41,78 @@ class ProfileFragment : Fragment(),ProfileAdapter.ItemAdapterCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initDataDummy()
-        var adapter = ProfileAdapter(opsiProfileList, this)
-        var layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
         val spacingInPixels = 9
         val itemDecoration = SpaceItemDecoration(spacingInPixels)
         binding.rcProfile.addItemDecoration(itemDecoration)
 
-        binding.rcProfile.layoutManager = layoutManager
-        binding.rcProfile.adapter = adapter
+        initDataProfileNotLogin()
+        initDataProfileIsLogin()
+        setupViewModel()
     }
 
-    private fun initDataDummy() {
-        opsiProfileList = ArrayList()
-        opsiProfileList.add(ProfileModel("Edit Profil"))
-        opsiProfileList.add(ProfileModel("Payments"))
-        opsiProfileList.add(ProfileModel("Rate App"))
-        opsiProfileList.add(ProfileModel("Help Center"))
-        opsiProfileList.add(ProfileModel("Privacy & Policy"))
-        opsiProfileList.add(ProfileModel("Terms & Condition"))
-        opsiProfileList.add(ProfileModel("Security"))
+    private fun initDataProfileNotLogin() {
+        opsiProfileNotLoginList = ArrayList()
+        opsiProfileNotLoginList.add(ProfileModel("Buat Akun Atau Masuk"))
+        opsiProfileNotLoginList.add(ProfileModel("Payments"))
+        opsiProfileNotLoginList.add(ProfileModel("Rate App"))
+        opsiProfileNotLoginList.add(ProfileModel("Help Center"))
+        opsiProfileNotLoginList.add(ProfileModel("Privacy & Policy"))
+        opsiProfileNotLoginList.add(ProfileModel("Terms & Condition"))
+        opsiProfileNotLoginList.add(ProfileModel("Security"))
 
+    }
+
+    private fun initDataProfileIsLogin() {
+        opsiProfileIsLoginList = ArrayList()
+        opsiProfileIsLoginList.add(ProfileModel("Edit Profile"))
+        opsiProfileIsLoginList.add(ProfileModel("Payments"))
+        opsiProfileIsLoginList.add(ProfileModel("Rate App"))
+        opsiProfileIsLoginList.add(ProfileModel("Help Center"))
+        opsiProfileIsLoginList.add(ProfileModel("Privacy & Policy"))
+        opsiProfileIsLoginList.add(ProfileModel("Terms & Condition"))
+        opsiProfileIsLoginList.add(ProfileModel("Security"))
+        opsiProfileIsLoginList.add(ProfileModel("Logout"))
+    }
+
+    private fun setupViewModel() {
+        profileViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(requireContext().dataStore))
+        )[ProfileViewModel::class.java]
+
+        profileViewModel.getUser().observe(viewLifecycleOwner) { user ->
+            if (user.isLogin) {
+                binding.tvUserName.text = user.fullname
+                binding.tvUserEmail.text = user.email
+                val adapter = ProfileAdapter(opsiProfileIsLoginList, this)
+                val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
+                binding.rcProfile.layoutManager = layoutManager
+                binding.rcProfile.adapter = adapter
+            } else {
+                binding.tvUserNotLogin.text = "Anda Belum Masuk"
+                val adapter = ProfileAdapter(opsiProfileNotLoginList, this)
+                val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
+                binding.rcProfile.layoutManager = layoutManager
+                binding.rcProfile.adapter = adapter
+            }
+        }
     }
 
     override fun onClick(v: View, data: ProfileModel) {
-        Toast.makeText(context, "test klik " + data.title, Toast.LENGTH_SHORT).show()
+        when (data.title) {
+            "Buat Akun Atau Masuk" -> {
+                val intent = Intent(context, SigninActivity::class.java)
+                startActivity(intent)
+            }
+            "Logout" -> {
+                profileViewModel.logout()
+                val intent = Intent(context, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+            }
+            else -> {
+                Toast.makeText(context, data.title, Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

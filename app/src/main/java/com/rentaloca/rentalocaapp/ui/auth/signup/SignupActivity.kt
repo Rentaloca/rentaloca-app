@@ -1,10 +1,9 @@
 package com.rentaloca.rentalocaapp.ui.auth.signup
 
 import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -13,7 +12,6 @@ import com.rentaloca.rentalocaapp.databinding.ActivitySignupBinding
 import com.rentaloca.rentalocaapp.model.UserModel
 import com.rentaloca.rentalocaapp.model.UserPreference
 import com.rentaloca.rentalocaapp.ui.ViewModelFactory
-import com.rentaloca.rentalocaapp.ui.auth.signin.SigninActivity
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -68,10 +66,6 @@ class SignupActivity : AppCompatActivity() {
                     }
                 }
             }
-        }
-
-        binding.buttonToSignin.setOnClickListener{
-            startActivity(Intent(this@SignupActivity, SigninActivity::class.java))
         }
     }
 }

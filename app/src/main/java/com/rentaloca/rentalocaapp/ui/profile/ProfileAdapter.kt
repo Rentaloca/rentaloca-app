@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rentaloca.rentalocaapp.databinding.ItemProfileBinding
 import com.rentaloca.rentalocaapp.model.dummy.ProfileModel
 
-
 class ProfileAdapter (
     private val listData : List<ProfileModel>,
     private val itemAdapterCallback : ItemAdapterCallback,
