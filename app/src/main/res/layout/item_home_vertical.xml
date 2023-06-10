@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_marginLeft="24dp"
+    android:layout_marginStart="24dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -9,7 +10,8 @@
         android:id="@+id/ivDummyBaju"
         android:layout_width="141dp"
         android:layout_height="163dp"
-        android:src="@drawable/dummybaju" />
+        tools:src="@drawable/stellarose"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -17,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Gaun Cantikuh"
+        tools:text="Stella Rose"
         android:textStyle="bold" />
 
     <TextView
@@ -25,7 +27,7 @@
         style="@style/TextView.PoppinsNormal16sp020202"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="12dp"
-        android:text="Rp.300.000"
+        tools:text="Rp 200.000 / 4 days"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     
