@@ -91,26 +91,49 @@
     </string-array>
 
     <string-array name="data_price">
-        <item>Rp 150.000 / 4 days</item>
-        <item>Rp 120.000 / 3 days</item>
-        <item>Rp 150.000 / 2 days</item>
-        <item>Rp 120.000 / 3 days</item>
-        <item>Rp 200.000 / 4 days</item>
-        <item>Rp 150.000 / 4 days</item>
-        <item>Rp 110.000 / 2 days</item>
-        <item>Rp 130.000 / 4 days</item>
-        <item>Rp 160.000 / 3 days</item>
-        <item>Rp 120.000 / 4 days</item>
-        <item>Rp 150.000 / 4 days</item>
-        <item>Rp 120.000 / 4 days</item>
-        <item>Rp 180.000 / 4 days</item>
-        <item>Rp 200.000 / 3 days</item>
-        <item>Rp 120.000 / 3 days</item>
-        <item>Rp 210.000 / 4 days</item>
-        <item>Rp 120.000 / 2 days</item>
-        <item>Rp 150.000 / 3 days</item>
-        <item>Rp 180.000 / 4 days</item>
-        <item>Rp 150.000 / 3 days</item>
+        <item>Rp 150.000</item>
+        <item>Rp 120.000</item>
+        <item>Rp 150.000</item>
+        <item>Rp 120.000</item>
+        <item>Rp 200.000</item>
+        <item>Rp 150.000</item>
+        <item>Rp 110.000</item>
+        <item>Rp 130.000</item>
+        <item>Rp 160.000</item>
+        <item>Rp 120.000</item>
+        <item>Rp 150.000</item>
+        <item>Rp 120.000</item>
+        <item>Rp 180.000</item>
+        <item>Rp 200.000</item>
+        <item>Rp 120.000</item>
+        <item>Rp 210.000</item>
+        <item>Rp 120.000</item>
+        <item>Rp 150.000</item>
+        <item>Rp 180.000</item>
+        <item>Rp 150.000</item>
+    </string-array>
+
+    <string-array name="data_days">
+        <item>4 days</item>
+        <item>3 days</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>4 days</item>
+        <item>2 days</item>
+        <item>4 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>4 days</item>
+        <item>4 days</item>
+        <item>4 days</item>
+        <item>3 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>3 days</item>
     </string-array>
 
     <string-array name="data_description">
@@ -137,25 +160,25 @@
     </string-array>
 
     <string-array name="data_bodyshape">
-        <item>rectangle</item>
-        <item>inverted triangle</item>
-        <item>pear</item>
-        <item>apple</item>
-        <item>apple</item>
-        <item>hourglass</item>
-        <item>inverted triangle</item>
-        <item>apple</item>
-        <item>rectangle</item>
-        <item>hourglass</item>
-        <item>apple</item>
-        <item>pear</item>
-        <item>rectangle</item>
-        <item>pear</item>
-        <item>pear</item>
-        <item>inverted triangle</item>
-        <item>hourglass</item>
-        <item>hourglass</item>
-        <item>rectangle</item>
-        <item>inverted triangle</item>
+        <item>Rectangle</item>
+        <item>Inverted Triangle</item>
+        <item>Pear</item>
+        <item>Apple</item>
+        <item>Apple</item>
+        <item>Hourglass</item>
+        <item>Inverted Triangle</item>
+        <item>Apple</item>
+        <item>Rectangle</item>
+        <item>Hourglass</item>
+        <item>Apple</item>
+        <item>Pear</item>
+        <item>Rectangle</item>
+        <item>Pear</item>
+        <item>Pear</item>
+        <item>Inverted Triangle</item>
+        <item>Hourglass</item>
+        <item>Hourglass</item>
+        <item>Rectangle</item>
+        <item>Inverted Triangle</item>
     </string-array>
 </resources>

@@ -44,11 +44,12 @@ class HomeAllFragment : Fragment() {
         val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
         val dataDressname = resources.getStringArray(R.array.data_dressname)
         val dataPrice = resources.getStringArray(R.array.data_price)
+        val dataDays = resources.getStringArray(R.array.data_days)
         val dataDescription = resources.getStringArray(R.array.data_description)
         val dataBodyshape = resources.getStringArray(R.array.data_bodyshape)
         val listDress = ArrayList<DressModel>()
         for (i in dataDressname.indices) {
-            val dress = DressModel(dataPhoto.getResourceId(i, -1), dataDressname[i], dataPrice[i], dataDescription[i], dataBodyshape[i])
+            val dress = DressModel(dataPhoto.getResourceId(i, -1), dataDressname[i], dataPrice[i], dataDays[i], dataDescription[i], dataBodyshape[i])
             listDress.add(dress)
         }
         return listDress

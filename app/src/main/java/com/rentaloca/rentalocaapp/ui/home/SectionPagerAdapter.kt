@@ -1,12 +1,14 @@
+@file:Suppress("DEPRECATION")
 package com.rentaloca.rentalocaapp.ui.home
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.rentaloca.rentalocaapp.ui.home.all.HomeAllFragment
+import com.rentaloca.rentalocaapp.ui.home.foryou.HomeForYouFragment
 
 class SectionPagerAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return when(position) {
             0 -> "All"
             1 -> "For You"
@@ -19,19 +21,19 @@ class SectionPagerAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getItem(position: Int): Fragment {
-        var fragment : Fragment
+        val fragment : Fragment
         return when(position) {
             0 -> {
                 fragment = HomeAllFragment()
-                return fragment
+                fragment
             }
             1 -> {
-                fragment = HomeAllFragment()
-                return fragment
+                fragment = HomeForYouFragment()
+                fragment
             }
             else -> {
                 fragment = HomeAllFragment()
-                return fragment
+                fragment
             }
         }
     }
