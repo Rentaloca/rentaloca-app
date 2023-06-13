@@ -42,7 +42,6 @@ class SignupActivity : AppCompatActivity() {
             val password = binding.passwordEditText.text.toString()
             val notelpon = binding.notelponEditText.text.toString()
             val alamat = binding.alamatEditText.text.toString()
-            val norekening = binding.norekeningEditText.text.toString()
             when {
                 fullname.isEmpty() -> {
                     binding.fullnameEditText.error = "Masukkan email"
@@ -54,7 +53,7 @@ class SignupActivity : AppCompatActivity() {
                     binding.passwordEditText.error = "Masukkan password"
                 }
                 else -> {
-                    signupViewModel.saveUser(UserModel(fullname, email, password, notelpon, alamat, norekening, false))
+                    signupViewModel.saveUser(UserModel(fullname, email, password, notelpon, alamat, false))
                     AlertDialog.Builder(this).apply {
                         setTitle("Yeah!")
                         setMessage("Akunnya sudah jadi nih. Yuk, login dan belajar coding.")

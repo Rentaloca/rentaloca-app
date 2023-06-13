@@ -191,42 +191,6 @@
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView4"
             tools:ignore="VisualLintTextFieldSize" />
 
-        <TextView
-            android:id="@+id/passwordTextView5"
-            style="@style/TextView.PoppinsNormal16sp020202"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:text="@string/norekening"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/alamatEditText" />
-
-        <EditText
-            android:id="@+id/norekeningEditText"
-            style="@style/EditText.PoppinsNormal14sp8D92A3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="32dp"
-            android:autofillHints=""
-            android:background="@drawable/shape_rectangle_outline_8_020202"
-            android:drawablePadding="10dip"
-            android:hint="@string/norekening_hint"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTextView5"
-            tools:ignore="VisualLintTextFieldSize" />
-
         <Button
             android:id="@+id/buttonSignup"
             style="@style/Button.Primary"
@@ -243,7 +207,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/norekeningEditText"
+            app:layout_constraintTop_toBottomOf="@+id/alamatEditText"
             tools:ignore="VisualLintButtonSize,TextContrastCheck" />
 
         <ImageView

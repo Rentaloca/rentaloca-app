@@ -6,6 +6,5 @@ data class UserModel(
     val password: String,
     val notelpon: String,
     val alamat: String,
-    val norekening: String,
     val isLogin: Boolean
 )
