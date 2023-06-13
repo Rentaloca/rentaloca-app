@@ -92,7 +92,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
             props["mail.smtp.port"] = "587"
 
             val username = "rentalocabangkit2023@gmail.com" // Ganti dengan email pengirim Gmail
-            val password = "" // Ganti dengan password email pengirim Gmail
+            val password = "neesdrblzftxnuna" // Ganti dengan password email pengirim Gmail
 
             val session = Session.getInstance(props,
                 object : Authenticator() {

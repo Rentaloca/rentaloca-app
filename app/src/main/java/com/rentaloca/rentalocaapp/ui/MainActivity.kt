@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_camera, R.id.navigation_profile
+                R.id.navigation_home, R.id.navigation_profile
             )
         )
 
