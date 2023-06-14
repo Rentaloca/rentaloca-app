@@ -55,9 +55,9 @@ class SignupActivity : AppCompatActivity() {
                 else -> {
                     signupViewModel.saveUser(UserModel(fullname, email, password, notelpon, alamat, false))
                     AlertDialog.Builder(this).apply {
-                        setTitle("Yeah!")
-                        setMessage("Akunnya sudah jadi nih. Yuk, login dan belajar coding.")
-                        setPositiveButton("Lanjut") { _, _ ->
+                        setTitle("Registration Success!")
+                        setMessage("Congratulations, your account has been succesfully created.")
+                        setPositiveButton("Continue") { _, _ ->
                             finish()
                         }
                         create()

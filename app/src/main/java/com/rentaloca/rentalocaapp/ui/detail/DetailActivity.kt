@@ -8,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -18,6 +19,7 @@ import com.rentaloca.rentalocaapp.databinding.ActivityDetailBinding
 import com.rentaloca.rentalocaapp.model.DressModel
 import com.rentaloca.rentalocaapp.model.UserModel
 import com.rentaloca.rentalocaapp.model.UserPreference
+import com.rentaloca.rentalocaapp.ui.MainActivity
 import com.rentaloca.rentalocaapp.ui.ViewModelFactory
 import com.rentaloca.rentalocaapp.ui.auth.signin.SigninActivity
 import java.util.*
@@ -71,9 +73,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
             R.id.buttonRent -> {
                 val dress = intent.getParcelableExtra(EXTRA_DRESS) as DressModel?
                 if(user.isLogin == true && dress != null) {
-//                    if () {
-                        SendEmailTask().execute(dress)
-//                    }
+                    SendEmailTask().execute(dress)
                 } else if(user.isLogin == false) {
                     startActivity(Intent(this, SigninActivity::class.java))
                 }
@@ -142,9 +142,31 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
 
         override fun onPostExecute(result: Boolean) {
             if (result) {
-                Toast.makeText(this@DetailActivity, "Email berhasil dikirim", Toast.LENGTH_SHORT).show()
+                AlertDialog.Builder(this@DetailActivity).apply {
+                    setTitle("Order Success!")
+                    setMessage("Your order has been received. Please check your email for confirmation.")
+                    setPositiveButton("Ok") { _, _ ->
+                        val intent = Intent(context, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intent)
+                        finish()
+                    }
+                    create()
+                    show()
+                }
             } else {
-                Toast.makeText(this@DetailActivity, "Gagal mengirim email", Toast.LENGTH_SHORT).show()
+                AlertDialog.Builder(this@DetailActivity).apply {
+                    setTitle("Order Failed!")
+                    setMessage("Have you used the correct email? Please double-check and try order again!")
+                    setPositiveButton("Ok") { _, _ ->
+                        val intent = Intent(context, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intent)
+                        finish()
+                    }
+                    create()
+                    show()
+                }
             }
         }
     }

@@ -63,9 +63,9 @@ class SigninActivity : AppCompatActivity() {
                 else -> {
                     signinViewModel.login()
                     AlertDialog.Builder(this).apply {
-                        setTitle("Yeah!")
-                        setMessage("Anda berhasil login. Sudah tidak sabar untuk belajar ya?")
-                        setPositiveButton("Lanjut") { _, _ ->
+                        setTitle("Login Success!")
+                        setMessage("You have successfully logged in. Happy choosing rental outfits!")
+                        setPositiveButton("Continue") { _, _ ->
                             val intent = Intent(context, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             startActivity(intent)
