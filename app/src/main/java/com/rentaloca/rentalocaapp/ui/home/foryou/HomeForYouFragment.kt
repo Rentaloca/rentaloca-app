@@ -43,11 +43,11 @@ class HomeForYouFragment : Fragment() {
 
         questionRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             if (checkedId == R.id.radioYes) {
-                binding.questionTextView.text = "Pilih tipe tubuh"
+                binding.questionTextView.text = "Choose your body shape"
                 bodyShapeRadioGroup.visibility = View.VISIBLE
                 questionRadioGroup.visibility = View.GONE
             } else if (checkedId == R.id.radioNo) {
-                binding.questionTextView.text = "Silakan menuju ke halaman kamera untuk dideteksi"
+                binding.questionTextView.text = "Go to Instagram with a body shape detection filter"
                 bodyShapeRadioGroup.visibility = View.GONE
                 questionRadioGroup.visibility = View.GONE
             }

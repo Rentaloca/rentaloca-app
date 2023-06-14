@@ -63,7 +63,7 @@ class ProfileFragment : Fragment(),ProfileAdapter.ItemAdapterCallback {
 
     private fun initDataProfileNotLogin() {
         opsiProfileNotLoginList = ArrayList()
-        opsiProfileNotLoginList.add(ProfileModel("Buat Akun Atau Masuk"))
+        opsiProfileNotLoginList.add(ProfileModel("Create Account Or Login"))
         opsiProfileNotLoginList.add(ProfileModel("Payments"))
         opsiProfileNotLoginList.add(ProfileModel("Rate App"))
         opsiProfileNotLoginList.add(ProfileModel("Help Center"))
@@ -100,7 +100,7 @@ class ProfileFragment : Fragment(),ProfileAdapter.ItemAdapterCallback {
                 binding.rcProfile.layoutManager = layoutManager
                 binding.rcProfile.adapter = adapter
             } else {
-                binding.tvUserNotLogin.text = "Anda Belum Masuk"
+                binding.tvUserNotLogin.text = "You Are Not Logged In"
                 val adapter = ProfileAdapter(opsiProfileNotLoginList, this)
                 val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
                 binding.rcProfile.layoutManager = layoutManager
@@ -111,7 +111,7 @@ class ProfileFragment : Fragment(),ProfileAdapter.ItemAdapterCallback {
 
     override fun onClick(v: View, data: ProfileModel) {
         when (data.title) {
-            "Buat Akun Atau Masuk" -> {
+            "Create Account Or Login" -> {
                 val intent = Intent(context, SigninActivity::class.java)
                 startActivity(intent)
             }

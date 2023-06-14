@@ -110,24 +110,22 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
                 )
                 message.subject = "Rental Details: ${dress.dressname}"
 
-                val emailContent = "Halo, ${user.fullname}\n\n" +
-                        "Terima kasih telah menggunakan jasa aplikasi Rentaloca kami untuk menyewa pakaian. " +
-                        "Berikut ini adalah detail pesanan Anda:\n\n" +
-                        "- Nama Pakaian: ${dress.dressname}\n" +
-                        "- Body Shape: ${dress.bodyshape}\n" +
-                        "- Durasi Sewa: ${dress.days}\n\n" +
-                        "Mohon melakukan pembayaran sebesar ${dress.price} ke rekening berikut:\n" +
-                        "- Bank: [Nama Bank]\n" +
-                        "- Nomor Rekening: [Nomor Rekening]\n" +
-                        "- Atas Nama: Fakhirah Azzahra Nurheyanti\n\n" +
-                        "Setelah melakukan pembayaran, harap konfirmasikan melalui pesan WhatsApp ke nomor berikut: [Nomor WhatsApp Rentaloca]. " +
-                        "Mohon sertakan bukti pembayaran agar kami dapat memverifikasi dan mengkonfirmasi pemesanan Anda.\n\n" +
-                        "Kami berharap pakaian yang Anda sewa dapat memenuhi kebutuhan dan harapan Anda. " +
-                        "Jika Anda memiliki pertanyaan atau membutuhkan bantuan tambahan, jangan ragu untuk menghubungi kami melalui aplikasi Rentaloca.\n\n" +
-                        "Sekali lagi, terima kasih telah memilih Rentaloca sebagai solusi penyewaan pakaian Anda. " +
-                        "Kami berharap dapat melayani Anda lagi di masa depan.\n\n" +
-                        "Terima kasih dan salam hangat,\n\n" +
-                        "Tim Rentaloca"
+                val emailContent = "Hi, ${user.fullname}!\n\n" +
+                        "Thank you for using our Rentaloca app to rent clothing. Here are the details of your order:\n\n" +
+                        "Dress Name: ${dress.dressname}\n" +
+                        "Body Shape: ${dress.bodyshape}\n" +
+                        "Rental Duration: ${dress.days}\n\n" +
+                        "Please make a payment of ${dress.price} to the following bank account:\n\n" +
+                        "Bank: BRI\n" +
+                        "Account Number: 0111-01-058352-50-7\n" +
+                        "Account Name: Fakhirah Azzahra Nurheyanti\n\n" +
+                        "After making the payment, kindly confirm via WhatsApp message to the following number: 089636026480. " +
+                        "Please attach the payment proof for verification and order confirmation.\n\n" +
+                        "We will promptly send the ordered items to your provided address (${user.alamat}) once we have verified your order.\n\n" +
+                        "We hope that the rented dress fulfills your needs and expectations. If you have any questions or require further assistance, feel free to reply to this email.\n\n" +
+                        "Once again, thank you for choosing Rentaloca as your clothing rental solution. We look forward to serving you again in the future.\n\n" +
+                        "Thank you and warm regards,\n\n" +
+                        "Rentaloca Team"
 
                 message.setText(emailContent)
 

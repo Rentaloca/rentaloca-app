@@ -3,13 +3,13 @@
     <string name="title_login_page">Hai, Selamat Datang!</string>
     <string name="message_login_page">silakan login</string>
     <string name="email_address">Email</string>
-    <string name="email_hint">masukkan email</string>
-    <string name="password">Kata Sandi</string>
-    <string name="password_hint">masukkan kata sandi</string>
-    <string name="button_signin">MASUK</string>
+    <string name="email_hint">type your email</string>
+    <string name="password">Password</string>
+    <string name="password_hint">type your password</string>
+    <string name="button_signin">LOGIN</string>
     <string name="to_signin">Sudah punya akun? masuk disini.</string>
-    <string name="button_signup">Belum punya akun? daftar disini.</string>
-    <string name="full_name">Nama</string>
+    <string name="button_signup">Register here for a new account.</string>
+    <string name="full_name">Full Name</string>
     <string name="full_name_hint">Type your full name</string>
     <string name="button_continue">Continue</string>
     <string name="add_picture_profile">Add picture profile</string>
@@ -26,15 +26,14 @@
     <string name="button_signup_now">Sign Up Now</string>
     <string name="title_activity_signup">SignupActivity</string>
     <string name="title_signup_page">Lengkapi Data Diri</string>
-    <string name="fullname">Full Name</string>
-    <string name="fullname_hint">masukkan nama anda</string>
-    <string name="notelp">Nomor Telepon</string>
-    <string name="notelp_hint">masukkan nomor telepon</string>
-    <string name="alamat">Alamat</string>
-    <string name="alamat_hint">masukkan alamat</string>
+    <string name="fullname_hint">type your full name</string>
+    <string name="notelp">Phone Number</string>
+    <string name="notelp_hint">type your phone number</string>
+    <string name="alamat">Home Address</string>
+    <string name="alamat_hint">type your home address</string>
     <string name="norekening">Nomor Rekening</string>
     <string name="norekening_hint">masukkan nomor rekening</string>
-    <string name="button_signupnow">DAFTAR</string>
+    <string name="button_signupnow">REGISTER</string>
     <string name="greeting">Halo %1$s,</string>
     <string name="logout">LOGOUT</string>
     <string name="title_activity_main">MainActivity</string>
@@ -90,26 +89,26 @@
     </string-array>
 
     <string-array name="data_price">
-        <item>Rp 150.000</item>
-        <item>Rp 120.000</item>
-        <item>Rp 150.000</item>
-        <item>Rp 120.000</item>
-        <item>Rp 200.000</item>
-        <item>Rp 150.000</item>
-        <item>Rp 110.000</item>
-        <item>Rp 130.000</item>
-        <item>Rp 160.000</item>
-        <item>Rp 120.000</item>
-        <item>Rp 150.000</item>
-        <item>Rp 120.000</item>
-        <item>Rp 180.000</item>
-        <item>Rp 200.000</item>
-        <item>Rp 120.000</item>
-        <item>Rp 210.000</item>
-        <item>Rp 120.000</item>
-        <item>Rp 150.000</item>
-        <item>Rp 180.000</item>
-        <item>Rp 150.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.200.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.110.000</item>
+        <item>Rp.130.000</item>
+        <item>Rp.160.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.180.000</item>
+        <item>Rp.200.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.210.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.180.000</item>
+        <item>Rp.150.000</item>
     </string-array>
 
     <string-array name="data_days">

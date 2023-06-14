@@ -9,7 +9,7 @@
         android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Apakah anda sudah tahu bentuk tubuh anda?"
+        android:text="Do you already know your body shape?"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,14 +28,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="BELUM" />
+            android:text="NOT YET" />
 
         <RadioButton
             android:id="@+id/radioYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="SUDAH" />
+            android:text="ALREADY KNOW" />
 
     </RadioGroup>
 
