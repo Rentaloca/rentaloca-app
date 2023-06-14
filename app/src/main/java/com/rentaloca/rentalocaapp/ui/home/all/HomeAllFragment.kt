@@ -34,8 +34,6 @@ class HomeAllFragment : Fragment() {
         val itemDecoration = SpaceItemDecoration(spacingInPixels)
         binding.rcListAll.addItemDecoration(itemDecoration)
 
-//        bajuList.addAll(getListDress())
-//        getListDress()
         showRecyclerList()
     }
 

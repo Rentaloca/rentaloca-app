@@ -1,6 +1,5 @@
 package com.rentaloca.rentalocaapp.ui.home.all
 
-
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -20,9 +19,6 @@ class HomeAllAdapter (
         return ListViewHolder(view)
     }
 
-//    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-//        holder.bind(listData[position], itemAdapterCallback)
-//    }
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (photo, title, price, days) = listData[position]
         holder.imgPhoto.setImageResource(photo)
@@ -35,29 +31,11 @@ class HomeAllAdapter (
         }
     }
 
-//    override fun getItemCount(): Int {
-//        return listData.size
-//    }
     override fun getItemCount(): Int = listData.size
-
-//    class ListViewHolder(private val binding: ItemHomeVerticalBinding) : RecyclerView.ViewHolder(binding.root) {
-//        fun bind(data: HomeModel, itemAdapterCallback: ItemAdapterCallback) {
-//            binding.apply {
-//                tvTitle.text = data.title
-//                tvPrice.text = data.price
-//
-//                itemView.setOnClickListener { itemAdapterCallback.onClick(itemView, data) }
-//            }
-//        }
-//    }
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgPhoto: ImageView = itemView.findViewById(R.id.ivDummyBaju)
         val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
         val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
     }
-
-//    interface ItemAdapterCallback {
-//        fun onClick(v: View, data:HomeModel)
-//    }
 }

@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             tools:text="ini user name"
+            android:textColor="#A287F4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -41,6 +42,7 @@
             android:layout_marginTop="7dp"
             android:layout_marginBottom="25dp"
             tools:text="ini user email"
+            android:textColor="#A287F4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="anda belum masuk"
+            android:textColor="#A287F4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
