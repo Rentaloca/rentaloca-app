@@ -6,15 +6,15 @@ data class LoginResponse(
     @field:SerializedName("error")
     var error: Boolean,
 
-    @field:SerializedName("loginResult")
-    var loginResult: LoginResult
+    @field:SerializedName("data")
+    var data: Data
 )
 
-data class LoginResult(
+data class Data(
     @field:SerializedName("name")
     var name: String,
 
-    @field:SerializedName("token")
+    @field:SerializedName("access_token")
     var token: String
 )
 

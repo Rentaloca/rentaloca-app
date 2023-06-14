@@ -2,9 +2,10 @@ package com.rentaloca.rentalocaapp.model
 
 data class UserModel(
     val fullname: String,
-    val email: String,
-    val password: String,
-    val notelpon: String,
-    val alamat: String,
-    val isLogin: Boolean
+    val token: String,
+    val isLogin: Boolean,
+//    val email: String,
+//    val password: String,
+//    val notelpon: String,
+//    val alamat: String
 )

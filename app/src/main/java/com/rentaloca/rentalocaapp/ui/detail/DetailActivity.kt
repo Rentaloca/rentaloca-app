@@ -58,10 +58,10 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.buttonRent.setOnClickListener(this)
 
-        detailViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(UserPreference.getInstance(dataStore))
-        )[DetailViewModel::class.java]
+//        detailViewModel = ViewModelProvider(
+//            this,
+//            ViewModelFactory(UserPreference.getInstance(dataStore))
+//        )[DetailViewModel::class.java]
 
         detailViewModel.getUser().observe(this) { user ->
             this.user = user
@@ -104,10 +104,10 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
             try {
                 val message = MimeMessage(session)
                 message.setFrom(InternetAddress(username))
-                message.setRecipients(
-                    Message.RecipientType.TO,
-                    InternetAddress.parse(user.email) // Ganti dengan alamat email penerima
-                )
+//                message.setRecipients(
+//                    Message.RecipientType.TO,
+//                    //InternetAddress.parse(user.email) // Ganti dengan alamat email penerima
+//                )
                 message.subject = "Rental Details: ${dress.dressname}"
 
                 val emailContent = "Hi, ${user.fullname}!\n\n" +
@@ -121,7 +121,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
                         "Account Name: Fakhirah Azzahra Nurheyanti\n\n" +
                         "After making the payment, kindly confirm via WhatsApp message to the following number: 089636026480. " +
                         "Please attach the payment proof for verification and order confirmation.\n\n" +
-                        "We will promptly send the ordered items to your provided address (${user.alamat}) once we have verified your order.\n\n" +
+                        "We will promptly send the ordered items to your provided address () once we have verified your order.\n\n" +
                         "We hope that the rented dress fulfills your needs and expectations. If you have any questions or require further assistance, feel free to reply to this email.\n\n" +
                         "Once again, thank you for choosing Rentaloca as your clothing rental solution. We look forward to serving you again in the future.\n\n" +
                         "Thank you and warm regards,\n\n" +

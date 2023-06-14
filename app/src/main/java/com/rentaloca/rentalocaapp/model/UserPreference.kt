@@ -9,28 +9,29 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class UserPreference private constructor(private val dataStore: DataStore<Preferences>) {
-
     fun getUser(): Flow<UserModel> {
         return dataStore.data.map { preferences ->
             UserModel(
-                preferences[FULLNAME_KEY] ?:"",
-                preferences[EMAIL_KEY] ?:"",
-                preferences[PASSWORD_KEY] ?:"",
-                preferences[NOTELPON_KEY] ?:"",
-                preferences[ALAMAT_KEY] ?:"",
-                preferences[STATE_KEY] ?: false
-            )
+                preferences[NAME_KEY] ?:"",
+                preferences[TOKEN_KEY] ?: "",
+                preferences[STATE_KEY] ?: false,
+//                preferences[EMAIL_KEY] ?: "",
+//                preferences[PASSWORD_KEY] ?: "",
+//                preferences[NOTELPON_KEY] ?: "",
+//                preferences[ALAMAT_KEY] ?: "",
+                )
         }
     }
 
-    suspend fun saveUser(user: UserModel) {
+    suspend fun postUser(user: UserModel) {
         dataStore.edit { preferences ->
-            preferences[FULLNAME_KEY] = user.fullname
-            preferences[EMAIL_KEY] = user.email
-            preferences[PASSWORD_KEY] = user.password
-            preferences[NOTELPON_KEY] = user.notelpon
-            preferences[ALAMAT_KEY] = user.alamat
+            preferences[NAME_KEY] = user.fullname
+            preferences[TOKEN_KEY] = user.token
             preferences[STATE_KEY] = user.isLogin
+//            preferences[EMAIL_KEY] = user.email
+//            preferences[PASSWORD_KEY] = user.password
+//            preferences[NOTELPON_KEY] = user.notelpon
+//            preferences[ALAMAT_KEY] = user.alamat
         }
     }
 
@@ -42,7 +43,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
 
     suspend fun logout() {
         dataStore.edit { preferences ->
-            preferences[STATE_KEY] = false
+            preferences.clear()
         }
     }
 
@@ -50,12 +51,14 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         @Volatile
         private var INSTANCE: UserPreference? = null
 
-        private val FULLNAME_KEY = stringPreferencesKey("fullname")
-        private val EMAIL_KEY = stringPreferencesKey("email")
-        private val PASSWORD_KEY = stringPreferencesKey("password")
-        private val NOTELPON_KEY = stringPreferencesKey("notelpon")
-        private val ALAMAT_KEY = stringPreferencesKey("alamat")
+        private val NAME_KEY = stringPreferencesKey("name")
+        private val TOKEN_KEY = stringPreferencesKey("token")
         private val STATE_KEY = booleanPreferencesKey("state")
+//        private val EMAIL_KEY = stringPreferencesKey("email")
+//        private val PASSWORD_KEY = stringPreferencesKey("password")
+//        private val NOTELPON_KEY = stringPreferencesKey("notelpon")
+//        private val ALAMAT_KEY = stringPreferencesKey("alamat")
+
 
         fun getInstance(dataStore: DataStore<Preferences>): UserPreference {
             return INSTANCE ?: synchronized(this) {

@@ -86,15 +86,15 @@ class ProfileFragment : Fragment(),ProfileAdapter.ItemAdapterCallback {
     }
 
     private fun setupViewModel() {
-        profileViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(UserPreference.getInstance(requireContext().dataStore))
-        )[ProfileViewModel::class.java]
+//        profileViewModel = ViewModelProvider(
+//            this,
+//            ViewModelFactory(UserPreference.getInstance(requireContext().dataStore))
+//        )[ProfileViewModel::class.java]
 
         profileViewModel.getUser().observe(viewLifecycleOwner) { user ->
             if (user.isLogin) {
                 binding.tvUserName.text = user.fullname
-                binding.tvUserEmail.text = user.email
+//                binding.tvUserEmail.text = user.email
                 val adapter = ProfileAdapter(opsiProfileIsLoginList, this)
                 val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
                 binding.rcProfile.layoutManager = layoutManager
