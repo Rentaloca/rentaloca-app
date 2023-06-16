@@ -1,6 +1,7 @@
 # rentaloca-app
 
 Capstone project Bangkit 2023 Rentaloca App
+
 Rentaloca Indonesia is a technology and a revolutionary business model the fashion authority into the hands of our users and
 offers them a platform for exchange that addresses all of the problems with borrowing clothes and will be able to access thousands of outfits
 (and growing) of designers, and local clothing brands in Indonesia through Subscription-based renting and one-time rentals.
