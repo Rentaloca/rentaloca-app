@@ -3,102 +3,147 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do you already know your body shape?"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Do You Already Know Your Body Shape?"
+        android:textColor="#A287F4"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/questionRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="TextSizeCheck" />
 
     <RadioGroup
         android:id="@+id/questionRadioGroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/questionTextView"
         android:paddingHorizontal="16dp"
-        android:paddingBottom="16dp">
-
-        <RadioButton
-            android:id="@+id/radioNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="NOT YET" />
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView">
 
         <RadioButton
             android:id="@+id/radioYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="ALREADY KNOW" />
+            android:text="Already Know"
+            android:textColor="#757575"
+            android:textSize="15dp"
+            tools:ignore="TextSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/radioNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Not Yet"
+            android:textColor="#757575"
+            android:textSize="15dp"
+            tools:ignore="TextSizeCheck" />
 
     </RadioGroup>
 
     <RadioGroup
         android:id="@+id/bodyShapeRadioGroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/questionRadioGroup"
         android:paddingHorizontal="16dp"
-        android:paddingBottom="16dp">
-
-        <RadioButton
-            android:id="@+id/rbRectangle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Rectangle" />
+        android:paddingBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionRadioGroup">
 
         <RadioButton
             android:id="@+id/rbITriangle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#757575"
+            android:textSize="15dp"
             android:text="Inverted Triangle" />
-
-        <RadioButton
-            android:id="@+id/rbPear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Pear" />
-
-        <RadioButton
-            android:id="@+id/rbApple"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Apple" />
 
         <RadioButton
             android:id="@+id/rbHourglass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#757575"
+            android:textSize="15dp"
             android:text="Hourglass" />
+
+        <RadioButton
+            android:id="@+id/rbRectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:textColor="#757575"
+            android:textSize="15dp"
+            android:text="Rectangle" />
+
+        <RadioButton
+            android:id="@+id/rbApple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:textColor="#757575"
+            android:textSize="15dp"
+            android:text="Apple" />
+
+        <RadioButton
+            android:id="@+id/rbPear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:textColor="#757575"
+            android:textSize="15dp"
+            android:text="Pear" />
 
     </RadioGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcListForYou"
-        android:visibility="gone"
-        android:clipChildren="false"
-        android:clipToPadding="false"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/white"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:paddingEnd="18dp"
         android:paddingBottom="56dp"
-        android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/bodyShapeRadioGroup"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bodyShapeRadioGroup"
         tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/buttonToFB"
+        style="@style/Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Go to Facebook"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionRadioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

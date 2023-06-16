@@ -1,6 +1,8 @@
 package com.rentaloca.rentalocaapp.ui.home.foryou
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +15,6 @@ import com.rentaloca.rentalocaapp.R
 import com.rentaloca.rentalocaapp.databinding.FragmentHomeForYouBinding
 import com.rentaloca.rentalocaapp.model.DressModel
 import com.rentaloca.rentalocaapp.ui.home.SpaceItemDecoration
-
 
 class HomeForYouFragment : Fragment() {
     private lateinit var binding: FragmentHomeForYouBinding
@@ -43,11 +44,12 @@ class HomeForYouFragment : Fragment() {
 
         questionRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             if (checkedId == R.id.radioYes) {
-                binding.questionTextView.text = "Choose your body shape"
+                binding.questionTextView.text = "Choose Your Body Shape"
                 bodyShapeRadioGroup.visibility = View.VISIBLE
                 questionRadioGroup.visibility = View.GONE
             } else if (checkedId == R.id.radioNo) {
-                binding.questionTextView.text = "Go to Instagram with a body shape detection filter"
+                binding.questionTextView.text = "Please go to Facebook to find out your\n body shape using body shape detection filters"
+                binding.buttonToFB.visibility = View.VISIBLE
                 bodyShapeRadioGroup.visibility = View.GONE
                 questionRadioGroup.visibility = View.GONE
             }
@@ -101,8 +103,17 @@ class HomeForYouFragment : Fragment() {
                     showRecyclerList()
                 }
             }
-            // Process body shape selection here
-            //showRecyclerList()
+        }
+
+        binding.buttonToFB.setOnClickListener {
+            val url = "https://www.facebook.com/fbcameraeffects/testit/618045853600166/ZTNiZGQ5MWJkOWNjNzE0ODZlNTljNjhhOTBmOWE2ZGU=/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+            binding.questionTextView.text = "Do You Already Know Your Body Shape?"
+            binding.buttonToFB.visibility = View.GONE
+            bodyShapeRadioGroup.visibility = View.GONE
+            questionRadioGroup.visibility = View.VISIBLE
         }
     }
 
@@ -131,5 +142,4 @@ class HomeForYouFragment : Fragment() {
         val listTechCompanyAdapter = HomeForYouAdapter(bajuListForyou)
         rvDressModel.adapter = listTechCompanyAdapter
     }
-
 }
