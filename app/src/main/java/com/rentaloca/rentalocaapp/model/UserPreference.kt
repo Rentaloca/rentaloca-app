@@ -18,7 +18,6 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
                 preferences[PASSWORD_KEY] ?:"",
                 preferences[NOTELPON_KEY] ?:"",
                 preferences[ALAMAT_KEY] ?:"",
-                preferences[NOREKENING_KEY] ?:"",
                 preferences[STATE_KEY] ?: false
             )
         }
@@ -31,7 +30,6 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
             preferences[PASSWORD_KEY] = user.password
             preferences[NOTELPON_KEY] = user.notelpon
             preferences[ALAMAT_KEY] = user.alamat
-            preferences[NOREKENING_KEY] = user.norekening
             preferences[STATE_KEY] = user.isLogin
         }
     }
@@ -57,7 +55,6 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         private val PASSWORD_KEY = stringPreferencesKey("password")
         private val NOTELPON_KEY = stringPreferencesKey("notelpon")
         private val ALAMAT_KEY = stringPreferencesKey("alamat")
-        private val NOREKENING_KEY = stringPreferencesKey("norekening")
         private val STATE_KEY = booleanPreferencesKey("state")
 
         fun getInstance(dataStore: DataStore<Preferences>): UserPreference {

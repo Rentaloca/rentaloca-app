@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
         <EditText
             android:id="@+id/fullnameEditText"
@@ -191,42 +191,6 @@
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView4"
             tools:ignore="VisualLintTextFieldSize" />
 
-        <TextView
-            android:id="@+id/passwordTextView5"
-            style="@style/TextView.PoppinsNormal16sp020202"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:text="@string/norekening"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/alamatEditText" />
-
-        <EditText
-            android:id="@+id/norekeningEditText"
-            style="@style/EditText.PoppinsNormal14sp8D92A3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="32dp"
-            android:autofillHints=""
-            android:background="@drawable/shape_rectangle_outline_8_020202"
-            android:drawablePadding="10dip"
-            android:hint="@string/norekening_hint"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTextView5"
-            tools:ignore="VisualLintTextFieldSize" />
-
         <Button
             android:id="@+id/buttonSignup"
             style="@style/Button.Primary"
@@ -236,52 +200,27 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:text="@string/button_signupnow"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/norekeningEditText"
-            tools:ignore="VisualLintButtonSize" />
-
-        <Button
-            android:id="@+id/buttonToSignin"
-            style="@style/Button.Secondary"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
             android:layout_marginBottom="45dp"
-            android:text="@string/to_signin"
+            android:text="@string/button_signupnow"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSignup"
-            tools:ignore="VisualLintButtonSize" />
+            app:layout_constraintTop_toBottomOf="@+id/alamatEditText"
+            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:color/transparent"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/logoImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/rentaloca" />
-
-        </androidx.appcompat.widget.Toolbar>
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="41dp"
+            android:src="@drawable/rentaloca"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

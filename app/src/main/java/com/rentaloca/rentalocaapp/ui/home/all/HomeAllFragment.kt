@@ -1,23 +1,22 @@
 package com.rentaloca.rentalocaapp.ui.home.all
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rentaloca.rentalocaapp.R
 import com.rentaloca.rentalocaapp.databinding.FragmentHomeAllBinding
-import com.rentaloca.rentalocaapp.model.dummy.HomeModel
-import com.rentaloca.rentalocaapp.ui.home.SectionPagerAdapter
+import com.rentaloca.rentalocaapp.model.DressModel
 import com.rentaloca.rentalocaapp.ui.home.SpaceItemDecoration
 
-class HomeAllFragment : Fragment(), HomeAllAdapter.ItemAdapterCallback {
+class HomeAllFragment : Fragment() {
+    private lateinit var rvDressModel: RecyclerView
     private lateinit var binding: FragmentHomeAllBinding
-    private var bajuList : ArrayList<HomeModel> = ArrayList()
+    private val bajuList = ArrayList<DressModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,34 +29,36 @@ class HomeAllFragment : Fragment(), HomeAllAdapter.ItemAdapterCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initDataDummy()
-        var adapter = HomeAllAdapter(bajuList, this)
-        var layoutManager: RecyclerView.LayoutManager = GridLayoutManager(activity, 2)
+        rvDressModel = binding.rcListAll
         val spacingInPixels = 14
         val itemDecoration = SpaceItemDecoration(spacingInPixels)
         binding.rcListAll.addItemDecoration(itemDecoration)
 
-        binding.rcListAll.layoutManager = layoutManager
-        binding.rcListAll.adapter = adapter
+        showRecyclerList()
     }
 
-    private fun initDataDummy() {
-        bajuList = ArrayList()
-        bajuList.add(HomeModel("Baju mantapu", "", "Rp.100.000"))
-        bajuList.add(HomeModel("Baju gakgerah", "", "Rp.200.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju mantapu", "", "Rp.100.000"))
-        bajuList.add(HomeModel("Baju gakgerah", "", "Rp.200.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-        bajuList.add(HomeModel("Baju ternyaman", "", "Rp.900.000"))
-
+    @SuppressLint("Recycle")
+    private fun getListDress(): ArrayList<DressModel> {
+        val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+        val dataDressname = resources.getStringArray(R.array.data_dressname)
+        val dataPrice = resources.getStringArray(R.array.data_price)
+        val dataDays = resources.getStringArray(R.array.data_days)
+        val dataDescription = resources.getStringArray(R.array.data_description)
+        val dataBodyshape = resources.getStringArray(R.array.data_bodyshape)
+        val listDress = ArrayList<DressModel>()
+        for (i in dataDressname.indices) {
+            val dress = DressModel(dataPhoto.getResourceId(i, -1), dataDressname[i], dataPrice[i], dataDays[i], dataDescription[i], dataBodyshape[i])
+            listDress.add(dress)
+        }
+        return listDress
     }
 
-    override fun onClick(v: View, data: HomeModel) {
-        Toast.makeText(context, "test klik gaes", Toast.LENGTH_SHORT).show()
+    private fun showRecyclerList() {
+        bajuList.clear()
+        bajuList.addAll(getListDress())
+        rvDressModel.layoutManager = GridLayoutManager(activity, 2)
+        val listTechCompanyAdapter = HomeAllAdapter(bajuList)
+        rvDressModel.adapter = listTechCompanyAdapter
     }
 
 }

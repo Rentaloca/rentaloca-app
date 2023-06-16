@@ -3,13 +3,13 @@
     <string name="title_login_page">Hai, Selamat Datang!</string>
     <string name="message_login_page">silakan login</string>
     <string name="email_address">Email</string>
-    <string name="email_hint">masukkan email</string>
-    <string name="password">Kata Sandi</string>
-    <string name="password_hint">masukkan kata sandi</string>
-    <string name="button_signin">MASUK</string>
+    <string name="email_hint">type your email</string>
+    <string name="password">Password</string>
+    <string name="password_hint">type your password</string>
+    <string name="button_signin">LOGIN</string>
     <string name="to_signin">Sudah punya akun? masuk disini.</string>
-    <string name="button_signup">Belum punya akun? daftar disini.</string>
-    <string name="full_name">Nama</string>
+    <string name="button_signup">Register here for a new account.</string>
+    <string name="full_name">Full Name</string>
     <string name="full_name_hint">Type your full name</string>
     <string name="button_continue">Continue</string>
     <string name="add_picture_profile">Add picture profile</string>
@@ -25,27 +25,158 @@
     <string name="ukuran_bawahan_hint">Type your ukuran bawahan</string>
     <string name="button_signup_now">Sign Up Now</string>
     <string name="title_activity_signup">SignupActivity</string>
-
-
     <string name="title_signup_page">Lengkapi Data Diri</string>
-    <string name="fullname">Full Name</string>
-    <string name="fullname_hint">masukkan nama anda</string>
-    <string name="notelp">Nomor Telepon</string>
-    <string name="notelp_hint">masukkan nomor telepon</string>
-    <string name="alamat">Alamat</string>
-    <string name="alamat_hint">masukkan alamat</string>
+    <string name="fullname_hint">type your full name</string>
+    <string name="notelp">Phone Number</string>
+    <string name="notelp_hint">type your phone number</string>
+    <string name="alamat">Home Address</string>
+    <string name="alamat_hint">type your home address</string>
     <string name="norekening">Nomor Rekening</string>
     <string name="norekening_hint">masukkan nomor rekening</string>
-    <string name="button_signupnow">DAFTAR</string>
-
+    <string name="button_signupnow">REGISTER</string>
     <string name="greeting">Halo %1$s,</string>
     <string name="logout">LOGOUT</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_camera">Kamera</string>
     <string name="title_order">Keranjang</string>
     <string name="title_profile">Profil</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <integer-array name="data_photo">
+        <item>@drawable/stellarose</item>
+        <item>@drawable/harperrainbow</item>
+        <item>@drawable/honeydewelegance</item>
+        <item>@drawable/oliviabelle</item>
+        <item>@drawable/avalily</item>
+        <item>@drawable/caribbeandream</item>
+        <item>@drawable/elliattrose</item>
+        <item>@drawable/espressoenchantment</item>
+        <item>@drawable/aquamarineserenade</item>
+        <item>@drawable/imperialcerulean</item>
+        <item>@drawable/isabellalily</item>
+        <item>@drawable/marshmallowdelight</item>
+        <item>@drawable/shamrocksymphony</item>
+        <item>@drawable/oliviarose</item>
+        <item>@drawable/pewterenchantment</item>
+        <item>@drawable/rosequartz</item>
+        <item>@drawable/seraphinaeve</item>
+        <item>@drawable/seraphinapearl</item>
+        <item>@drawable/snowflakeserenade</item>
+        <item>@drawable/cinderellaenchantment</item>
+    </integer-array>
+
+    <string-array name="data_dressname">
+        <item>Stella Rose</item>
+        <item>Harper Rainbow</item>
+        <item>Honeydew Elegance</item>
+        <item>Olivia Belle</item>
+        <item>Ava Lily</item>
+        <item>Caribbean Dream</item>
+        <item>Elliatt Rose</item>
+        <item>Espresso Enchantment</item>
+        <item>Aquamarine Serenade</item>
+        <item>Imperial Cerulean</item>
+        <item>Isabella Lily</item>
+        <item>Marshmallow Delight</item>
+        <item>Shamrock Symphony</item>
+        <item>Olivia Rose</item>
+        <item>Pewter Enchantment</item>
+        <item>Rose Quartz</item>
+        <item>Seraphina Eve</item>
+        <item>Seraphina Pearl</item>
+        <item>Snowflake Serenade</item>
+        <item>Cinderella Enchantment</item>
+    </string-array>
+
+    <string-array name="data_price">
+        <item>Rp.150.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.200.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.110.000</item>
+        <item>Rp.130.000</item>
+        <item>Rp.160.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.180.000</item>
+        <item>Rp.200.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.210.000</item>
+        <item>Rp.120.000</item>
+        <item>Rp.150.000</item>
+        <item>Rp.180.000</item>
+        <item>Rp.150.000</item>
+    </string-array>
+
+    <string-array name="data_days">
+        <item>4 days</item>
+        <item>3 days</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>4 days</item>
+        <item>2 days</item>
+        <item>4 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>4 days</item>
+        <item>4 days</item>
+        <item>4 days</item>
+        <item>3 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>3 days</item>
+    </string-array>
+
+    <string-array name="data_description">
+        <item>Embrace the beauty of stars and the delicate allure of roses with the captivating Stella Rose dress.</item>
+        <item>Embrace joy and radiance with this vibrant dress that showcases a rainbow of colors, spreading positivity and happiness.</item>
+        <item>Embrace elegance with this graceful dress in a refreshing honeydew green, reminiscent of a summer breeze.</item>
+        <item>Unleash your inner beauty with the Olivia Belle dress, radiating elegance and captivating charm like a true princess.</item>
+        <item>Inspired by the beauty of the Lily flower, this dress embodies grace and captivating allure.</item>
+        <item>Indulge in the allure of a Caribbean dream with this captivating dress that exudes a sense of tropical paradise.</item>
+        <item>Immerse yourself in the delicate beauty of the Elliatt Rose dress, evoking a sense of romance and femininity.</item>
+        <item>Experience the enchantment of deep espresso with this mesmerizing dress that exudes mystery and elegance.</item>
+        <item>A mesmerizing dress in a stunning aquamarine shade that radiates elegance and charm.</item>
+        <item>Reign with elegance in this majestic dress adorned in a deep cerulean blue, creating a sense of regal charm.</item>
+        <item>Inspired by the exquisite Isabella Lily, this dress embodies elegance and enchanting beauty.</item>
+        <item>Step into a world of sweetness with this delightful dress that captures the essence of fluffy marshmallows.</item>
+        <item>Step into a world of harmony with this dress adorned in shamrock green, exuding a musical and rhythmic allure.</item>
+        <item>Experience the delicate beauty of the Olivia Rose dress, evoking a sense of romance and the tender allure of a rose.</item>
+        <item>Embrace the allure of pewter with this enchanting dress that exudes elegance and mystery.</item>
+        <item>Revel in the soft and captivating beauty of rose quartz with this mesmerizing dress, evoking a sense of enchantment.</item>
+        <item>Immerse yourself in the graceful elegance of the Seraphina Eve dress, evoking the serenity and allure of the evening.</item>
+        <item>Embodied with the magnificence of pearls, the Seraphina Pearl dress radiates opulence and breathtaking beauty.</item>
+        <item>Step into a winter wonderland with this enchanting dress that captures the elegance and magic of snowflakes.</item>
+        <item>Experience the enchantment of Cinderellas tale with this magical dress that captures the essence of a fairytale.</item>
+    </string-array>
+
+    <string-array name="data_bodyshape">
+        <item>Rectangle</item>
+        <item>Inverted Triangle</item>
+        <item>Pear</item>
+        <item>Apple</item>
+        <item>Apple</item>
+        <item>Hourglass</item>
+        <item>Inverted Triangle</item>
+        <item>Apple</item>
+        <item>Rectangle</item>
+        <item>Hourglass</item>
+        <item>Apple</item>
+        <item>Pear</item>
+        <item>Rectangle</item>
+        <item>Pear</item>
+        <item>Pear</item>
+        <item>Inverted Triangle</item>
+        <item>Hourglass</item>
+        <item>Hourglass</item>
+        <item>Rectangle</item>
+        <item>Inverted Triangle</item>
+    </string-array>
 </resources>

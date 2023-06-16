@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.rentaloca.rentalocaapp.databinding.ActivitySigninBinding
 import com.rentaloca.rentalocaapp.model.UserModel
 import com.rentaloca.rentalocaapp.model.UserPreference
+import com.rentaloca.rentalocaapp.ui.MainActivity
 import com.rentaloca.rentalocaapp.ui.ViewModelFactory
 import com.rentaloca.rentalocaapp.ui.auth.signup.SignupActivity
 
@@ -62,10 +63,10 @@ class SigninActivity : AppCompatActivity() {
                 else -> {
                     signinViewModel.login()
                     AlertDialog.Builder(this).apply {
-                        setTitle("Yeah!")
-                        setMessage("Anda berhasil login. Sudah tidak sabar untuk belajar ya?")
-                        setPositiveButton("Lanjut") { _, _ ->
-                            //val intent = Intent(context, MainActivity::class.java)
+                        setTitle("Login Success!")
+                        setMessage("You have successfully logged in. Happy choosing rental outfits!")
+                        setPositiveButton("Continue") { _, _ ->
+                            val intent = Intent(context, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             startActivity(intent)
                             finish()

@@ -1,46 +1,41 @@
 package com.rentaloca.rentalocaapp.ui.home.all
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.rentaloca.rentalocaapp.databinding.ItemHomeVerticalBinding
-import com.rentaloca.rentalocaapp.model.dummy.HomeModel
-
+import com.rentaloca.rentalocaapp.R
+import com.rentaloca.rentalocaapp.model.DressModel
+import com.rentaloca.rentalocaapp.ui.detail.DetailActivity
 
 class HomeAllAdapter (
-    private val listData : List<HomeModel>,
-    private val itemAdapterCallback : ItemAdapterCallback,
-) : RecyclerView.Adapter<HomeAllAdapter.ViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemHomeVerticalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+    private val listData : ArrayList<DressModel>,
+) : RecyclerView.Adapter<HomeAllAdapter.ListViewHolder>(){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_home_vertical, parent, false)
+        return ListViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(listData[position], itemAdapterCallback)
-    }
-
-    override fun getItemCount(): Int {
-        return listData.size
-    }
-
-    class ViewHolder(private val binding: ItemHomeVerticalBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: HomeModel, itemAdapterCallback: ItemAdapterCallback) {
-            binding.apply {
-                tvTitle.text = data.title
-                tvPrice.text = data.price
-
-//                Glide.with(itemView.context)
-//                    .load(data.src)
-//                    .into(ivDummyBaju)
-
-                itemView.setOnClickListener { itemAdapterCallback.onClick(itemView, data) }
-            }
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+        val (photo, title, price, days) = listData[position]
+        holder.imgPhoto.setImageResource(photo)
+        holder.tvTitle.text = title
+        holder.tvPrice.text = "${price} / ${days}"
+        holder.itemView.setOnClickListener {
+            val intentDetail = Intent(holder.itemView.context, DetailActivity::class.java)
+            intentDetail.putExtra("key_dress", listData[holder.adapterPosition])
+            holder.itemView.context.startActivity(intentDetail)
         }
     }
 
-    interface ItemAdapterCallback {
-        fun onClick(v: View, data:HomeModel)
+    override fun getItemCount(): Int = listData.size
+
+    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imgPhoto: ImageView = itemView.findViewById(R.id.ivDummyBaju)
+        val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
+        val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
     }
 }
