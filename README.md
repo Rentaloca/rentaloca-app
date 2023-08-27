@@ -9,3 +9,6 @@ offers them a platform for exchange that addresses all of the problems with borr
 Libraries We Use
 
 ![Screenshot from 2023-06-16 22-36-56](https://github.com/Rentaloca/rentaloca-app/assets/66340211/e8982e7e-2a9a-4221-a755-6baf976c6c1c)
+
+# License
+Copyright (c) 2023 - Rentaloca Bangkit Product-based Capstone
